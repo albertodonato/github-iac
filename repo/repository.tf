@@ -21,8 +21,6 @@ resource "github_repository" "repo" {
   squash_merge_commit_title   = "PR_TITLE"
   squash_merge_commit_message = "PR_BODY"
 
-  vulnerability_alerts = true
-
   security_and_analysis {
     secret_scanning {
       status = "enabled"
@@ -31,18 +29,9 @@ resource "github_repository" "repo" {
       status = "enabled"
     }
   }
+}
 
-  dynamic "pages" {
-    for_each = var.has_pages ? [true] : []
-    content {
-      build_type = "workflow"
-      cname      = var.pages_cname
-    }
-  }
-
-  lifecycle {
-    ignore_changes = [
-      pages[0].source, # source is not used for workflow builds
-    ]
-  }
+resource "github_repository_vulnerability_alerts" "repo" {
+  repository = github_repository.repo.name
+  enabled    = true
 }

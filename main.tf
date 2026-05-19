@@ -144,6 +144,7 @@ module "metapackages" {
   dependencies_labels = [
     "dependencies",
     "github_actions",
+    "python:uv",
   ]
 
   has_issues  = false
