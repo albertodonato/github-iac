@@ -94,6 +94,7 @@ module "github_workflows" {
   dependencies_labels = [
     "dependencies",
     "github_actions",
+    "pre_commit",
   ]
 
   has_issues = false
@@ -112,6 +113,10 @@ module "h2static" {
     "serving-files",
     "static-server",
     "tls",
+  ]
+  dependencies_labels = [
+    "dependencies",
+    "github_actions",
   ]
 }
 
@@ -144,6 +149,7 @@ module "metapackages" {
   dependencies_labels = [
     "dependencies",
     "github_actions",
+    "pre_commit",
     "python:uv",
   ]
 
@@ -315,6 +321,10 @@ module "shell_scripts" {
   topics = [
     "shell",
     "shell-scripts",
+  ]
+  dependencies_labels = [
+    "dependencies",
+    "github_actions",
   ]
 }
 
