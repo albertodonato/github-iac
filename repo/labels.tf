@@ -56,6 +56,14 @@ locals {
       description = "Pull requests that update GitHub Actions code"
       color       = "000000"
     }
+    "go" = {
+      description = "Pull requests that update go code"
+      color       = "16e2e2"
+    }
+    "nix" = {
+      description = "Pull requests that update nix code"
+      color       = "3E6399"
+    }
     "pre_commit" = {
       description = "Pull requests that update pre_commit code"
       color       = "000000"

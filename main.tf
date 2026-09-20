@@ -117,6 +117,7 @@ module "h2static" {
   dependencies_labels = [
     "dependencies",
     "github_actions",
+    "go",
   ]
 }
 
@@ -171,6 +172,7 @@ module "nix_packages" {
   dependencies_labels = [
     "dependencies",
     "github_actions",
+    "nix",
   ]
 
   has_issues = false
