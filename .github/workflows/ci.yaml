@@ -20,8 +20,8 @@ jobs:
 
       - name: Lint
         run: |
-          make lint
+          just lint
 
       - name: Validate
         run: |
-          make validate
+          just validate
