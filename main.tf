@@ -300,6 +300,9 @@ module "snap_helpers" {
     "snapcraft",
     "snappy",
   ]
+  action_environments = {
+    pypi = "*.*.*"
+  }
 }
 
 module "sonarr_snap" {
