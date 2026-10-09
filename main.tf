@@ -118,6 +118,7 @@ module "h2static" {
     "dependencies",
     "github_actions",
     "go",
+    "nix",
   ]
 }
 
@@ -303,19 +304,6 @@ module "snap_helpers" {
   action_environments = {
     pypi = "*.*.*"
   }
-}
-
-module "sonarr_snap" {
-  source = "./repo"
-
-  name         = "sonarr-snap"
-  description  = "Snap for the Sonarr smart PVR"
-  homepage_url = "https://sonarr.tv"
-  topics = [
-    "snap",
-    "sonarr",
-    "sonarr-pvr",
-  ]
 }
 
 module "shell_scripts" {
