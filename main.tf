@@ -290,22 +290,6 @@ module "rtlsdr_snap" {
   ]
 }
 
-module "snap_helpers" {
-  source = "./repo"
-
-  name        = "snap-helpers"
-  description = "Interact with the Snap system within a Snap"
-  topics = [
-    "python-library",
-    "snap",
-    "snapcraft",
-    "snappy",
-  ]
-  action_environments = {
-    pypi = "*.*.*"
-  }
-}
-
 module "shell_scripts" {
   source = "./repo"
 

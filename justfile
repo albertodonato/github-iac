@@ -13,3 +13,15 @@ validate:
 # Upgrade modules
 upgrade:
     {{tf}} init --upgrade
+
+# Remove repository from state
+remove-repository name:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    tf="{{tf}}"
+    name="{{name}}"
+
+    for r in $("$tf" state list | grep -F "module.${name//-/_}"); do
+      "$tf" state rm "$r";
+    done
